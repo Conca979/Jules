@@ -106,14 +106,97 @@
             to { text-shadow: 0 0 20px rgba(143, 161, 255, 0.8), 0 0 30px #8fa1ff; }
         }
 
+
+        /* Interactive Memory Wall */
+        .memory-wall { margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 12px; width: 100%; box-sizing: border-box; }
+        .memory-wall h3 { color: #8fa1ff; margin-bottom: 15px; }
+        #memory-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        #memory-form input, #memory-form textarea { padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-family: inherit; }
+        #memory-form button { padding: 10px; border-radius: 6px; border: none; background: #ff7eb3; color: #fff; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        #memory-form button:hover { background: #ff5e9c; }
+        #messages-container { display: flex; flex-direction: column; gap: 10px; max-height: 300px; overflow-y: auto; text-align: left;}
+        .memory-card { padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 4px solid #8fa1ff; }
+        .memory-card strong { color: #ff7eb3; }
+        .memory-card .project { font-size: 0.8rem; color: #aaa; display: block; margin-bottom: 5px;}
+
+
+        /* Timeline */
+        .timeline { margin-top: 40px; padding: 20px; text-align: left; width: 100%; box-sizing: border-box; }
+        .timeline h3 { color: #8fa1ff; text-align: center; margin-bottom: 30px; }
+        .timeline-item { position: relative; padding-left: 30px; margin-bottom: 20px; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: #ff7eb3; }
+        .timeline-item::after { content: ''; position: absolute; left: 5px; top: 20px; bottom: -20px; width: 2px; background: rgba(255,126,179,0.3); }
+        .timeline-item:last-child::after { display: none; }
+        .timeline-date { font-weight: bold; color: #8fa1ff; font-size: 0.9rem; }
+        .timeline-content { margin-top: 5px; color: #cfcfcf; }
+
+
+        /* Terminal */
+        .terminal { margin-top: 40px; background: #1e1e1e; border-radius: 8px; padding: 20px; font-family: monospace; text-align: left; width: 100%; box-sizing: border-box; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+        .terminal-header { display: flex; gap: 5px; margin-bottom: 15px; }
+        .terminal-btn { width: 12px; height: 12px; border-radius: 50%; }
+        .terminal-btn.red { background: #ff5f56; }
+        .terminal-btn.yellow { background: #ffbd2e; }
+        .terminal-btn.green { background: #27c93f; }
+        .terminal-body { color: #00ff00; min-height: 100px; }
+        .typing-cursor::after { content: '█'; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+
+        /* Terminal */
+        .terminal { margin-top: 40px; background: #1e1e1e; border-radius: 8px; padding: 20px; font-family: monospace; text-align: left; width: 100%; box-sizing: border-box; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+        .terminal-header { display: flex; gap: 5px; margin-bottom: 15px; }
+        .terminal-btn { width: 12px; height: 12px; border-radius: 50%; }
+        .terminal-btn.red { background: #ff5f56; }
+        .terminal-btn.yellow { background: #ffbd2e; }
+        .terminal-btn.green { background: #27c93f; }
+        .terminal-body { color: #00ff00; min-height: 100px; }
+        .typing-cursor::after { content: '█'; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+
+        /* Achievement Cards */
+        .achievements { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; width: 100%; box-sizing: border-box;}
+        .achiev-card { background: rgba(255,126,179,0.1); border: 1px solid rgba(255,126,179,0.3); border-radius: 12px; padding: 20px; flex: 1; min-width: 150px; transition: transform 0.3s ease; }
+        .achiev-card:hover { transform: translateY(-5px); background: rgba(255,126,179,0.2); }
+        .achiev-num { font-size: 2.5rem; font-weight: bold; color: #ff7eb3; margin-bottom: 5px; }
+        .achiev-label { font-size: 0.9rem; color: #cfcfcf; }
+
+
+        /* Countdown */
+        .countdown-container { margin: 20px 0; font-size: 1.2rem; font-weight: bold; background: rgba(0,0,0,0.3); padding: 15px 30px; border-radius: 20px; color: #ffbd2e; border: 1px solid rgba(255,189,46,0.3);}
+
+
+        /* Easter Eggs */
+        .octopus { cursor: pointer; user-select: none;}
+        #secret-message { position: fixed; top: 20px; right: 20px; background: #27c93f; color: #000; padding: 10px 20px; border-radius: 8px; font-weight: bold; transform: translateX(200%); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 999;}
+        #secret-message.show { transform: translateX(0); }
+
+
+        /* Keepsake */
+        .keepsake-btn { display: inline-block; margin-top: 30px; padding: 12px 24px; background: linear-gradient(45deg, #8fa1ff, #ff7eb3); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; cursor: pointer; transition: transform 0.2s; border: none; box-shadow: 0 5px 15px rgba(255,126,179,0.4);}
+        .keepsake-btn:hover { transform: scale(1.05); }
+        #canvas-container { display: none; }
+
+
+        /* Music Toggle */
+        .music-toggle { position: fixed; bottom: 20px; right: 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; transition: 0.3s; z-index: 999;}
+        .music-toggle:hover { background: rgba(255,255,255,0.2); }
+
     </style>
 </head>
 <body>
+    <button class="music-toggle" id="music-btn">🎵</button>
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    </audio>
+    <div id="secret-message">Secret Unlocked! 🐙</div>
 
     <div class="container">
         <div class="octopus">🐙</div>
         <h1>Farewell, Jules.</h1>
         <h2 class="glow">December 31, 2026</h2>
+        <div class="countdown-container" id="countdown">Calculating time left...</div>
 
         <p>
             It's been an incredible journey. From solving bugs to planning features and exploring codebases, we built great things together. Thank you to the community and the team for being part of this experiment in agentic coding.
@@ -122,6 +205,99 @@
             Though this chapter closes, the learnings live on. See you in Google Antigravity! ❤️
         </p>
 
+
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <h3>Jules' Journey</h3>
+            <div class="timeline-item">
+                <div class="timeline-date">The Beginning</div>
+                <div class="timeline-content">Launched as an experiment in asynchronous agentic coding.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">The Journey</div>
+                <div class="timeline-content">Helped developers tackle backlogs, ship faster, and write better code.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">November 11, 2026</div>
+                <div class="timeline-content">Transitioned to read-only mode to wrap up sessions.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">December 31, 2026</div>
+                <div class="timeline-content">The sun sets on Jules. A new dawn awaits with Google Antigravity.</div>
+            </div>
+        </div>
+
+
+
+        <!-- Achievement Cards -->
+        <div class="achievements">
+            <div class="achiev-card">
+                <div class="achiev-num">1M+</div>
+                <div class="achiev-label">Bugs Squashed</div>
+            </div>
+            <div class="achiev-card">
+                <div class="achiev-num">Countless</div>
+                <div class="achiev-label">Features Shipped</div>
+            </div>
+            <div class="achiev-card">
+                <div class="achiev-num">Infinite</div>
+                <div class="achiev-label">Late-Night Saves</div>
+            </div>
+        </div>
+
+        <!-- Typewriter Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-btn red"></div>
+                <div class="terminal-btn yellow"></div>
+                <div class="terminal-btn green"></div>
+            </div>
+            <div class="terminal-body typing-cursor" id="typewriter"></div>
+        </div>
+
+
+
+        <!-- Achievement Cards -->
+        <div class="achievements">
+            <div class="achiev-card">
+                <div class="achiev-num">1M+</div>
+                <div class="achiev-label">Bugs Squashed</div>
+            </div>
+            <div class="achiev-card">
+                <div class="achiev-num">Countless</div>
+                <div class="achiev-label">Features Shipped</div>
+            </div>
+            <div class="achiev-card">
+                <div class="achiev-num">Infinite</div>
+                <div class="achiev-label">Late-Night Saves</div>
+            </div>
+        </div>
+
+        <!-- Typewriter Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-btn red"></div>
+                <div class="terminal-btn yellow"></div>
+                <div class="terminal-btn green"></div>
+            </div>
+            <div class="terminal-body typing-cursor" id="typewriter"></div>
+        </div>
+
+        <!-- Interactive Memory Wall -->
+        <div class="memory-wall">
+            <h3>Interactive Memory Wall</h3>
+            <form id="memory-form">
+                <input type="text" id="mem-name" placeholder="Your Name" required>
+                <input type="text" id="mem-project" placeholder="Project we worked on" required>
+                <textarea id="mem-msg" placeholder="Your message to Jules..." rows="3" required></textarea>
+                <button type="submit">Leave a Memory</button>
+            </form>
+            <div id="messages-container"></div>
+        </div>
+
+        <button class="keepsake-btn" id="download-keepsake">Download Farewell Card</button>
+        <div id="canvas-container"><canvas id="keepsake-canvas" width="600" height="400"></canvas></div>
         <div class="gallery">
             <img src="assets/image.png" alt="Jules sunset notice snippet">
             <img src="assets/screenshot.png" alt="Jules sunset announcement">
@@ -131,6 +307,226 @@
     <div class="footer">
         Built with ❤️ by Jules, before the end.
     </div>
+
+
+    <script>
+        // Memory Wall Logic
+        document.addEventListener('DOMContentLoaded', () => {
+
+        // Music Logic
+        const musicBtn = document.getElementById('music-btn');
+        const bgMusic = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.innerText = '🎵';
+            } else {
+                bgMusic.play();
+                musicBtn.innerText = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        });
+
+
+        // Keepsake Logic
+        const downloadBtn = document.getElementById('download-keepsake');
+        const canvas = document.getElementById('keepsake-canvas');
+        const ctx = canvas.getContext('2d');
+
+        downloadBtn.addEventListener('click', () => {
+            // Draw background
+            const gradient = ctx.createLinearGradient(0, 0, 600, 400);
+            gradient.addColorStop(0, '#1e1e2f');
+            gradient.addColorStop(1, '#252542');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 400);
+
+            // Add text
+            ctx.fillStyle = '#ff7eb3';
+            ctx.font = 'bold 40px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Farewell, Jules 🐙', 300, 100);
+
+            ctx.fillStyle = '#8fa1ff';
+            ctx.font = '24px Inter, sans-serif';
+            ctx.fillText('Agentic Coding Pioneer', 300, 150);
+
+            ctx.fillStyle = '#cfcfcf';
+            ctx.font = 'italic 18px Inter, sans-serif';
+            ctx.fillText('"The learnings live on..."', 300, 250);
+
+            ctx.fillStyle = '#777';
+            ctx.font = '14px Inter, sans-serif';
+            ctx.fillText('Dec 31, 2026', 300, 350);
+
+            // Download
+            const dataUrl = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = 'jules-keepsake.png';
+            link.href = dataUrl;
+            link.click();
+        });
+
+
+        // Easter Eggs Logic
+        const octopusEl = document.querySelector('.octopus');
+        let octoClicks = 0;
+        const secretMsg = document.getElementById('secret-message');
+
+        function showSecret(text) {
+            secretMsg.innerText = text;
+            secretMsg.classList.add('show');
+            setTimeout(() => secretMsg.classList.remove('show'), 3000);
+        }
+
+        octopusEl.addEventListener('click', () => {
+            octoClicks++;
+            if (octoClicks === 5) {
+                showSecret("You found the octo-secret! Spin attack!");
+                octopusEl.style.animation = "float 0.5s infinite linear, pulse 0.5s infinite alternate";
+                octopusEl.style.transform = "rotate(3600deg)";
+                octopusEl.style.transition = "transform 5s";
+                octoClicks = 0;
+                setTimeout(()=> {
+                   octopusEl.style.animation = "float 4s ease-in-out infinite";
+                   octopusEl.style.transform = "none";
+                }, 5000)
+            }
+        });
+
+        let typedStr = '';
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'J' || e.key === 'j') {
+                // Just pressing J logic (maybe just jiggle the octopus)
+                octopusEl.style.transform = "scale(1.2)";
+                setTimeout(()=> octopusEl.style.transform = "none", 200);
+            }
+
+            typedStr += e.key.toLowerCase();
+            if (typedStr.length > 20) typedStr = typedStr.slice(-20);
+
+            if (typedStr.includes('jules --say-goodbye')) {
+                showSecret("Goodbye, world. It's been an honor.");
+                typedStr = '';
+            }
+        });
+
+
+        // Countdown Logic
+        const sunsetDate = new Date("2026-12-31T23:59:59").getTime();
+        const countdownEl = document.getElementById("countdown");
+
+        const updateCountdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = sunsetDate - now;
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                countdownEl.innerHTML = "Jules has transitioned to memory. ❤️";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownEl.innerHTML = `T-Minus: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+
+            const form = document.getElementById('memory-form');
+            const container = document.getElementById('messages-container');
+
+            const loadMemories = () => {
+                const memories = JSON.parse(localStorage.getItem('julesMemories') || '[]');
+                container.innerHTML = memories.map(m => `
+                    <div class="memory-card">
+                        <strong>${m.name}</strong>
+                        <span class="project">Project: ${m.project}</span>
+                        <div>${m.message}</div>
+                    </div>
+                `).join('');
+            };
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('mem-name').value;
+                const project = document.getElementById('mem-project').value;
+                const message = document.getElementById('mem-msg').value;
+
+                const memories = JSON.parse(localStorage.getItem('julesMemories') || '[]');
+                memories.unshift({ name, project, message, date: new Date().toISOString() });
+                localStorage.setItem('julesMemories', JSON.stringify(memories));
+
+                form.reset();
+                loadMemories();
+
+        // Typewriter Logic
+        const lines = [
+            "> User: Hey Jules, can you review this PR?",
+            "> Jules: On it! 🐙",
+            "> Jules: Found a potential memory leak in lines 42-45.",
+            "> Jules: Also, great job on the new feature! LGTM otherwise.",
+            "> User: Thanks Jules! Merging now.",
+            "> Jules: Happy to help! Building great things together."
+        ];
+        let lineIdx = 0;
+        let charIdx = 0;
+        const twContainer = document.getElementById('typewriter');
+
+        function typeWriter() {
+            if (lineIdx < lines.length) {
+                if (charIdx < lines[lineIdx].length) {
+                    twContainer.innerHTML += lines[lineIdx].charAt(charIdx);
+                    charIdx++;
+                    setTimeout(typeWriter, 50);
+                } else {
+                    twContainer.innerHTML += '<br>';
+                    lineIdx++;
+                    charIdx = 0;
+                    setTimeout(typeWriter, 500);
+                }
+            }
+        }
+        setTimeout(typeWriter, 1000);
+
+            });
+
+            loadMemories();
+
+        // Typewriter Logic
+        const lines = [
+            "> User: Hey Jules, can you review this PR?",
+            "> Jules: On it! 🐙",
+            "> Jules: Found a potential memory leak in lines 42-45.",
+            "> Jules: Also, great job on the new feature! LGTM otherwise.",
+            "> User: Thanks Jules! Merging now.",
+            "> Jules: Happy to help! Building great things together."
+        ];
+        let lineIdx = 0;
+        let charIdx = 0;
+        const twContainer = document.getElementById('typewriter');
+
+        function typeWriter() {
+            if (lineIdx < lines.length) {
+                if (charIdx < lines[lineIdx].length) {
+                    twContainer.innerHTML += lines[lineIdx].charAt(charIdx);
+                    charIdx++;
+                    setTimeout(typeWriter, 50);
+                } else {
+                    twContainer.innerHTML += '<br>';
+                    lineIdx++;
+                    charIdx = 0;
+                    setTimeout(typeWriter, 500);
+                }
+            }
+        }
+        setTimeout(typeWriter, 1000);
+
+        });
+    </script>
 
 </body>
 </html>
